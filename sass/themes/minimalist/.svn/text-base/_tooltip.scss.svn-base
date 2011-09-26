@@ -1,0 +1,42 @@
+@charset "UTF-8";
+/* -----------------------------
+  TOOLTIP
+  author:jquery tooltip (tipsy v 0.1.7)
+  update:
+------------------------------*/
+
+.tooltip{
+	padding-left: 16px;
+	display: inline-block;
+}
+
+
+span.tooltip{
+	background: url(../img/icon/help.png) no-repeat left top;
+	cursor: default;
+	color: #7a7a7a;
+	&:hover{
+		color: #06c;
+		background-color: #E2F0FF;
+	}
+}
+
+
+.tipsy {
+	padding: 5px;
+	font-size: 11px;
+	background-repeat: no-repeat;
+	background-image: url(../js/mylib/tipsy.gif);
+}
+.tipsy-inner {
+	padding: 5px 8px 4px 8px;
+	background-color: black;
+	color: white;
+	max-width: 250px;
+	text-align: center;
+	@include border-radius(2px);
+}
+.tipsy-north { background-position: top center; }
+.tipsy-south { background-position: bottom center; }
+.tipsy-east { background-position: right center; }
+.tipsy-west { background-position: left center; }

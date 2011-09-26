@@ -1,0 +1,45 @@
+@charset "UTF-8";
+/* -----------------------------
+  MESSAGE BAR
+  author:
+  update:
+------------------------------*/
+
+
+.messageBar{
+	font-weight:bold;
+	margin-bottom: 1em;
+	cursor:pointer;
+
+	span{
+		display: block;
+		padding: 0.5em 1em;
+		&:after{
+			content: "×";
+			float: right;
+		}
+	}
+
+	.ok{
+		background-color: #EDFBD8;
+		border: 1px solid #BFDE84;
+		@include border-radius(2px);
+		color: #508600;
+	}
+
+	.caution{
+		background-color:#FEFDE2;
+		border:1px solid #E5E181;
+		@include border-radius(2px);
+		color:#666;
+	}
+
+	.ng{
+		background-color: #FFECCE;
+		border:1px solid #E9C59B;
+		@include border-radius(2px);
+		color: #E3302C;
+	}
+
+}
+

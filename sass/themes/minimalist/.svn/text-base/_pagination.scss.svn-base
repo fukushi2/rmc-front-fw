@@ -1,0 +1,48 @@
+@charset "UTF-8";
+/* -----------------------------
+  PAGINATION
+ -----------------------------
+  author:
+  update:
+------------------------------*/
+
+.pagination{
+	height: 2em;
+
+ul{
+	display: inline-block;
+	border: 1px solid $color_border;
+	@include border-radius(3px);
+
+	li{
+			display: inline;
+			line-height: 1.4em;
+
+		a{
+			display: block;
+			float: left;
+			line-height: 2em;
+			padding: 0 0.7em;
+			border-right: 1px solid $color_border;
+			text-decoration: none;
+			color: darken($color_main,30%);
+		}
+
+		&:hover,
+		&.current{
+			background: darken($color_main,20%);
+		}
+		a:hover,
+		&.current a{
+			color: #fff;
+			background: darken($color_main,20%);
+		}
+
+		&:last-child a{
+			border-right: 0 none;
+		}
+	}//li
+
+}//ul
+
+}

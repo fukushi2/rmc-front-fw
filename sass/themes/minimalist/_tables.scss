@@ -1,0 +1,61 @@
+@charset "UTF-8";
+/* -----------------------------
+  TABLE
+  author:
+  update:
+------------------------------*/
+
+//一覧テーブル
+
+
+table.list-table{
+	width: 100%;
+
+	tr{
+		border-bottom: 1px solid $color_border;
+
+		&:hover{
+			background: lighten($color_main,30%);
+		}
+	}
+
+	th{
+		@include linear-gradient(#0a93fc,#107fca);
+		padding: 0.5em 0 0.5em 0.5em;
+		color: #fff;
+		font-size: $yui-11px;
+		&:first-child{
+			@include border-radius(3px 0 0 0);
+		}
+		&:last-child{
+			@include border-radius(0 3px 0 0);
+		}
+	}
+	td{
+		padding: 0.5em 0 0.5em 0.5em;
+	}
+}
+
+table.zebra-striped tbody tr:nth-child(odd) td{
+	background-color: #F9F9F9;
+}
+
+
+//編集テーブル
+
+table.edit-table{
+	width: 90%;
+	margin: 0 auto 1em;
+
+	th{
+		font-weight: bold;
+		text-align:right;
+		width: 20%;
+		padding: 0.5em 1em 0 0;
+		vertical-align: top;
+	}
+
+	td{
+		padding: 5px;
+	}
+}

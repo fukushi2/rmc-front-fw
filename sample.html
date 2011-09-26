@@ -1,0 +1,857 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="ja"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="ja"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="ja"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="ja"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>フレームワークサンプル</title>
+
+<link rel="shortcut icon" href="/favicon.ico">
+
+<!-- CSS: implied media="all" -->
+
+<link rel="stylesheet" href="sample/sample.css">
+<link rel="stylesheet" href="css/lib/jquery-ui-1.8.16.flick.all.css">
+<script src="js/lib/modernizr-1.7.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script>window.jQuery || document.write("<script src='js/lib/jquery-1.6.1.min.js'>\x3C/script>")</script>
+<style>
+.span_kiyaku1{padding:4px 6px;background:#06f;color:#fff;border-radius:3px;font-size:11px;margin-right:0.5em;}
+.span_kiyaku2{padding:4px 6px;background:#f06;color:#fff;border-radius:3px;font-size:11px;margin-right:0.5em;}
+.span_kiyaku3{padding:4px 6px;background:#ff6;color:#333;border-radius:3px;font-size:11px;margin-right:0.5em;}
+.indent-list li{
+	margin-left: 1.5em;
+}
+.indent-list span{
+	margin-left: 1em;
+	color: #666;
+	font-size : smaller;
+}
+</style>
+</head>
+
+<body>
+<div id="container" data-role="page" class="login">
+
+<div id="header" data-role="header" role="banner">
+<div class="layout-inner">
+<div id="logo">
+<a href="index.html"><span>★RMCフロントエンドフレームワーク★</span></a></div>
+<div id="manage"><ul>
+<li>ユーザー名</li>
+<li><a href="#">共通リンク</a></li>
+<li><a href="#">マイリンク</a></li>
+</ul></div>
+</div>
+<!-- /header --></div>
+
+<div id="sample-fwtitle">
+	<p>★フロントエンドフレームワーク★</p>
+
+</div>
+
+<div id="contents">
+
+
+<div class="container_12">
+  <div class="grid_2"></div>
+  <div class="grid_8">
+	<p>本フレームワークは、WEBアプリ(※)開発時の画面開発を簡易化するためのview構築をサポートします。</p>
+	<p>このページは本フレームワークで構築されています。</p>
+	<p class="text-small">※WEBアプリ開発…フォーム入力やエラー表示、ページングなどを利用したアプリケーションのこと。<br />サイトごとにまったく違うビジュアルのWEBサイト制作よりもパワーを発揮します。</p>
+
+  </div>
+  <div class="grid_2"></div>
+</div>
+
+
+
+<div class="container_12">
+  <div class="grid_4">
+		<h2>Grid System</h2>
+<p class="text-gray">グリッド数を指定するだけで、クロスブラウザで崩れないレイアウトカラムを実現</p>
+<p class="text-gray">max960pxを好きな12グリッドで分割できる「960gs」を採用</p>
+  </div>
+  <div class="grid_4">
+		<h2>SCSS support</h2>
+<p class="text-gray">メンテナンスしやすいSASS記述によるCSS構築</p>
+<p class="text-gray">モジュールごとに追加・修正が容易</p>
+<p class="text-gray">テーマ切り替えで簡単に基本スタイルを変更</p>
+  </div>
+  <div class="grid_4">
+		<h2>Graceful Degradation</h2>
+<p class="text-gray">モダンブラウザでHTML5最高のパフォーマンスを発揮</p>
+<p class="text-gray">レガシーブラウザでも必要な機能を損なわない</p>
+<p class="text-gray">IE(+各バージョン)用CSSやJSを個別に設定可能</p>
+  </div>
+
+</div>
+
+
+
+<div id="start_content"></div>
+
+
+<h1 id="grid">グリッドレイアウトシステム</h1>
+<p>レイアウトカラム内に装飾用カラムを利用すればクロスブラウザで構築可能</p>
+<div class="container_12 container_sample">
+
+<!-- 0-12 -->
+  <div class="grid_12"><p>grid1：940px</p></div>
+  <div class="clear"></div>
+
+<!-- 1-11 -->
+  <div class="grid_1"><p>grid1：60px</p></div>
+  <div class="grid_11"><p>grid11：860px</p></div>
+  <div class="clear"></div>
+
+<!-- 2-10 -->
+  <div class="grid_2"><p>grid2：140px</p></div>
+  <div class="grid_10"><p>grid10：780px</p></div>
+  <div class="clear"></div>
+
+<!-- 3-9 -->
+  <div class="grid_3"><p>grid3：220px</p></div>
+  <div class="grid_9"><p>grid9：700px</p></div>
+  <div class="clear"></div>
+
+<!-- 4-8 -->
+  <div class="grid_4"><p>grid4：300px</p></div>
+  <div class="grid_8"><p>grid8：620px</p></div>
+  <div class="clear"></div>
+
+<!-- 5-7 -->
+  <div class="grid_5"><p>grid5：380px</p></div>
+  <div class="grid_7"><p>grid7：540px</p></div>
+  <div class="clear"></div>
+
+<!-- 6-6 -->
+  <div class="grid_6"><p>grid6：460px</p></div>
+  <div class="grid_6"><p>grid6：460px</p></div>
+  <div class="clear"></div>
+
+
+<!-- 3-6-3 -->
+  <div class="grid_3"><p>grid3：220px</p></div>
+  <div class="grid_6"><p>grid6：460px</p></div>
+  <div class="grid_3"><p>grid3：220px</p></div>
+  <div class="clear"></div>
+
+<!-- 2-8-2 -->
+  <div class="grid_2"><p>grid2：140px</p></div>
+  <div class="grid_8"><p>grid8：620px</p></div>
+  <div class="grid_2"><p>grid2：140px</p></div>
+  <div class="clear"></div>
+
+<!-- 1-10-1 -->
+  <div class="grid_1"><p>grid1：60px</p></div>
+  <div class="grid_10"><p>grid10：780px</p></div>
+  <div class="grid_1"><p>grid1：60px</p></div>
+  <div class="clear"></div>
+
+<!-- 2-5-1-1-1-1-1 -->
+  <div class="grid_2"><p>grid2：140px</p></div>
+  <div class="grid_5"><p>grid5：380px</p></div>
+  <div class="grid_1"><p>grid1：60px</p></div>
+  <div class="grid_1"><p>grid1：60px</p></div>
+  <div class="grid_1"><p>grid1：60px</p></div>
+  <div class="grid_1"><p>grid1：60px</p></div>
+  <div class="grid_1"><p>grid1：60px</p></div>
+  <div class="clear"></div>
+
+<!-- /container_12 --></div>
+
+
+
+
+<div class="container_12">
+<div class="grid_3">
+<h1 id="color" class="midasi">カラー設定</h1>
+<p class="text-gray">_style</p>
+<p>基本配色を変数として定義</p>
+<p>オンマウスやアクティブ時のエフェクト色は、指定色をもとに彩度調整で自動的に指定（もちろん個別にも設定可能）</p>
+<p>ボタンやグラデーションの色を考える手間を軽減</p>
+<!-- /grid --></div>
+<div class="grid_9 mainBlock">
+<div class="color_main">メイン</div>
+<div class="color_effect">差し色</div>
+<div class="color_border">ボーダー</div>
+<div class="color_main1">メイン：20%ダーク(自動)</div>
+<div class="color_main2">メイン：20%ライト(自動)</div>
+
+</div>
+<!-- /container_12 --></div>
+
+
+
+<div class="container_12">
+<div class="grid_3">
+<h1 id="typography" class="midasi">タイポグラフィ</h1>
+<p class="text-gray">_typograhy</p>
+<p>HeadingおよびP</p>
+<p>テキストの配置</p>
+<p>テキストの色</p>
+<p>※フォントサイズはすべて相対値(em相対による%指定)</p>
+<p>※フォント指定はYUI2を利用</p>
+<!-- /grid --></div>
+<div class="grid_9 mainBlock">
+
+	<h1>Heading1 ページタイトル</h1>
+	<h2>Heading2 中見出し</h2>
+	<h3>Heading3 中見出し</h3>
+	<h4>Heading4 小見出し</h4>
+	<h5>Heading5 補足見出し</h5>
+	<h6>Heading6 あんまり使わない</h6>
+
+	<p>普通の段落文</p>
+	<p class="text-medium">中くらいの文字テキスト</p>
+	<p class="text-large">大きい文字テキスト</p>
+	<p class="text-center">中央テキスト</p>
+	<p class="text-right">▲右テキスト</p>
+	<p class="text-gray">グレーの文章は補足テキストに</p>
+	<p class="text-red">赤の文章は注意テキストに</p>
+
+</div>
+<!-- /container_12 --></div>
+
+
+<div class="container_12">
+<div class="grid_3">
+<h1 id="list" class="midasi">リスト</h1>
+<p class="text-gray">_typography</p>
+<p>説明説明</p>
+</p>
+<!-- /grid --></div>
+<div class="grid_9 mainBlock">
+<ul>
+	<li>リスト項目</li>
+	<li>リスト項目</li>
+	<li>リスト項目</li>
+</ul>
+
+<ol>
+	<li>リスト項目</li>
+	<li>リスト項目</li>
+	<li>リスト項目</li>
+</ol>
+
+<ul>
+	<li>アイコンつきリスト</li>
+	<li>アイコンつきリスト</li>
+	<li>アイコンつきリスト</li>
+</ul>
+
+<!-- /grid --></div>
+<!-- /container_12 --></div>
+
+
+<div class="container_12">
+<div class="grid_3">
+<h1 id="tooltip" class="midasi">ツールチップ</h1>
+<p class="text-gray">_tooltip</p>
+<p>説明説明</p>
+</p>
+<!-- /grid --></div>
+<div class="grid_9 mainBlock">
+<p>
+<span class="tooltip" data-tooltip-title="シンプルツールチップ">ツールチップ</span>
+<span class="tooltip" data-tooltip-title="ツールチップだけ表示">&nbsp;</span>←テキストがない場合もOK
+</p>
+<p><input type="text" class="tooltip" data-tooltip-title="例)mail@example.com" placeholder="サンプル・入力例つき"></p>
+<p>※ツールチップはCSSクラス「tooltip」＋title要素またはdata-tooltip-title要素を指定してください</p>
+
+<!-- /grid --></div>
+<!-- /container_12 --></div>
+
+
+
+
+
+
+<div class="container_12">
+<div class="grid_3">
+<h1 id="button" class="midasi">ボタン</h1>
+<p class="text-gray">_button</p>
+<p>説明説明</p>
+</p>
+<!-- /grid --></div>
+<div class="grid_9 mainBlock">
+
+
+	<p><a class="btn" href="#">BUTTON(aタグ)</a></p>
+	<p><button class="btn">BUTTON(buttonタグ)</button></p>
+	<p><a class="btn2" href="#">BUTTON2(aタグ)：キャンセルとか戻る用</a></p>
+	<p><button class="btn2">BUTTON2(buttonタグ)：キャンセルとか戻る用</button></p>
+	<p><a class="btn3" href="#">BUTTON3(aタグ)：ページ内汎用ボタン</a></p>
+	<p><button class="btn3">BUTTON3(buttonタグ)：ページ内汎用ボタン</button></p>
+
+	<hr />
+	<p><input type="submit" value="SUBMITボタン" class="btn" /></p>
+	<p><input type="reset" value="RESETボタン" class="btn2" /></p>
+
+
+	<p class="text-center">中央テキストに<a class="btn" href="#">ボタンリンク</a></p>
+
+	<p class="text-center">中央テキストに<a class="btn text-medium" href="#">ボタンリンク(文字中)</a></p>
+
+	<p class="text-center">中央テキストに<a class="btn text-large" href="#">ボタンリンク(文字大)</a></p>
+
+<!-- /grid --></div>
+<!-- /container_12 --></div>
+
+
+
+<div class="container_12">
+<div class="grid_3">
+<h1 id="messagebar" class="midasi">メッセージバー</h1>
+<p class="text-gray">_messagebar</p>
+<p>クリックすると消えるアラート文言</p>
+<p>OK、NG、注意の3種類</p>
+</p>
+<!-- /grid --></div>
+<div class="grid_9 mainBlock">
+
+
+	<div class="messageBar" title="クリックして閉じる"><span  class="ok">メッセージバー(OK)</span></div>
+
+	<div class="messageBar" title="クリックして閉じる"><span  class="ng">メッセージバー(NG)</span></div>
+
+	<div class="messageBar" title="クリックして閉じる"><span  class="caution">メッセージバー(注意)</span></div>
+
+</div>
+<!-- /container_12 --></div>
+
+
+<div class="container_12">
+<div class="grid_3">
+<h1 id="form" class="midasi">フォーム</h1>
+<p class="text-gray">_form</p>
+<p>入力部品の標準パーツを搭載</p>
+</p>
+<!-- /grid --></div>
+<div class="grid_9 mainBlock">
+
+
+<form action="#">
+
+<table class="edit-table">
+<tr>
+	<th>お名前</th>
+	<td><input type="text" /></td>
+</tr>
+<tr>
+	<th>性別</th>
+	<td><label><input type="radio" name="radio2"><span>男性</span></label>
+	<label><input type="radio" name="radio2"><span>女性</span></label></td>
+</tr>
+<tr>
+	<th>好きな果物</th>
+	<td>
+	<label><input type="checkbox"><span>りんご</span></label>
+	<label><input type="checkbox"><span>みかん</span></label>
+	<label><input type="checkbox"><span>ぶどう</span></label>
+	</td>
+</tr>
+<tr>
+<th>契約ステータス</th>
+<td><select name="status" id="status" 0 >
+<option value="">--なし--</option>
+<option value="1" selected>新規</option>
+<option value="2">進行中</option>
+<option value="3">戻し</option>
+<option value="4">デッド</option>
+<option value="5">成約済</option>
+</select>
+</td>
+</tr>
+<tr>
+<th>リードソース<br />
+*multiple</th>
+<td><select name="lead_source[]" id="lead_source"   multiple>
+<option value="">--なし--</option>
+<option value="メルマガ" selected>メルマガ</option>
+<option value="資料請求">資料請求</option>
+<option value="モデルルーム見学" selected>モデルルーム見学</option>
+</select>
+</td>
+</tr>
+<tr>
+	<th>IME-ON</th>
+	<td><input type="text" class="ime-on" placeholder="文字入力が日本語モードになるよ" /></td>
+</tr>
+<tr>
+	<th>IME-OFF</th>
+	<td><input type="text" class="ime-off" placeholder="abcABC123" /></td>
+</tr>
+<tr>
+	<th>disabled</th>
+	<td><input type="text" placeholder="編集不可" disabled /></td>
+</tr>
+<tr>
+	<th>入力例つき</th>
+	<td><input type="text" class="tooltip"
+		placeholder="class:tooltip" data-tooltip-title="例)123-4567" /></td>
+</tr>
+<tr>
+	<th>ファイル選択</th>
+	<td><input type="file" /></td>
+</tr>
+
+<tr>
+	<th>お問い合わせ</th>
+	<td>	<textarea placeholder="テキストエリア入力"></textarea>
+	</td>
+</tr>
+
+</table>
+<div class="actionArea">
+<p class="text-center">
+<a href="#">キャンセル</a>
+<input type="submit" value="送信する" class="btn" />
+</p>
+</div>
+
+</form>
+
+</div>
+<!-- /container_12 --></div>
+
+
+<div class="container_12">
+<div class="grid_3">
+<h1 id="pagination" class="midasi">ページネイション</h1>
+<p class="text-gray">_pagination</p>
+<p>説明説明</p>
+</p>
+<!-- /grid --></div>
+<div class="grid_9 mainBlock">
+
+
+<div class="pagination">
+<ul>
+	<li><a href="#">＜＜</a></li>
+	<li class="current"><a href="#">2</a></li>
+	<li><a href="#">3</a></li>
+	<li><a href="#">4</a></li>
+	<li><a href="#">5</a></li>
+	<li><a href="#">＞＞</a></li>
+</ul>
+</div>
+
+<div class="pagination text-center">
+<ul>
+	<li><a href="#">＜＜</a></li>
+	<li class="current"><a href="#">2</a></li>
+	<li><a href="#">3</a></li>
+	<li><a href="#">4</a></li>
+	<li><a href="#">5</a></li>
+	<li><a href="#">＞＞</a></li>
+</ul>
+</div>
+
+<div class="pagination text-right">
+<ul>
+	<li><a href="#">＜＜</a></li>
+	<li class="current"><a href="#">2</a></li>
+	<li><a href="#">3</a></li>
+	<li><a href="#">4</a></li>
+	<li><a href="#">5</a></li>
+	<li><a href="#">＞＞</a></li>
+</ul>
+</div>
+
+
+</div>
+<!-- /container_12 --></div>
+
+
+<div class="container_12">
+<div class="grid_3">
+<h1 id="tab" class="midasi">タブ</h1>
+<p class="text-gray">_tab</p>
+<p>タブは必ずリンクを含む</p>
+</p>
+<!-- /grid --></div>
+<div class="grid_9 mainBlock">
+	<ul class="tabs">
+	<li class="active"><a href="#">タブ１</a></li>
+	<li><a href="#">タブ２</a></li>
+	<li><a href="#">タブ３</a></li>
+	<li><a href="#">タブ４</a></li>
+	<li><a href="#">タブはいくつでも</a></li>
+	</ul>
+</div>
+<!-- /container_12 --></div>
+
+
+<div class="container_12">
+<div class="grid_3">
+<h1 id="modal" class="midasi">モーダル</h1>
+<p class="text-gray">_modal</p>
+<p>説明説明</p>
+</p>
+<!-- /grid --></div>
+<div class="grid_9 mainBlock">
+
+<p>モーダルはjQuery UIを使ってますがこれでいいのか、、、</p>
+			<p><a class="btn" href="#dialog" id="dialog-start">モーダル開始ボタン</a></p>
+
+			<div id="dialog">モーダル中身だよ</div>
+
+  <script>
+	$(document).ready(function(){
+		$('#dialog').hide();
+
+		var _buttons = {};
+		_buttons['OKボタン'] = function(){$(this).dialog('close');};
+		_buttons['キャンセルボタン']  = function(){$(this).dialog('close');};
+
+		$("#dialog-start").click(function(){
+			$('#dialog').dialog('open');
+		});
+
+		$('#dialog').dialog({
+			autoOpen: false,
+			modal :true,
+			draggable :false,
+			title :'モーダルタイトルだよ',
+			height :130,
+			width :320,
+			buttons :_buttons,
+			overlay :{ opacity:0.3, background:'#225B7F' }
+		});
+	});
+  </script>
+</div>
+<!-- /container_12 --></div>
+
+<div class="container_12">
+<div class="grid_3">
+<h1 id="table" class="midasi">テーブル</h1>
+<p class="text-gray">_table</p>
+<p>リスト画面などで利用する一覧テーブル</p>
+<p>編集フォームなどで利用する編集テーブル</p>
+</p>
+<!-- /grid --></div>
+<div class="grid_9 mainBlock">
+
+
+<h2>一覧テーブル</h2>
+
+			<table class="list-table">
+				<tr>
+					<th>ステータス</th>
+					<th>日時</th>
+					<th>送信ユーザ</th>
+					<th>内容</th>
+					<th>配信アカウント</th>
+					<th>操作</th>
+				</tr>
+				<tr>
+					<td>あああ</td>
+					<td>2011.07.28</td>
+					<td>かもめ太郎</td>
+					<td>ほげほげツイートほげほげツイート...</td>
+					<td>扇風機次郎</td>
+					<td>編集</td>
+				</tr>
+				<tr>
+					<td>いいい</td>
+					<td>2011.07.31</td>
+					<td>福島N助</td>
+					<td>ほげほげツイートほげほげツイート...</td>
+					<td>電話太郎</td>
+					<td>編集</td>
+				</tr>
+				<tr>
+					<td>あああ</td>
+					<td>2011.08.01</td>
+					<td>かもめ太郎</td>
+					<td>ほげほげツイートほげほげツイート...</td>
+					<td>雑誌三郎</td>
+					<td>編集</td>
+				</tr>
+			</table>
+
+
+<h2>一覧テーブル+ゼブラ</h2>
+
+			<table class="list-table zebra-striped">
+				<tr>
+					<th>ステータス</th>
+					<th>日時</th>
+					<th>送信ユーザ</th>
+					<th>内容</th>
+					<th>配信アカウント</th>
+					<th>操作</th>
+				</tr>
+				<tr>
+					<td>あああ</td>
+					<td>2011.07.28</td>
+					<td>かもめ太郎</td>
+					<td>ほげほげツイートほげほげツイート...</td>
+					<td>扇風機次郎</td>
+					<td>編集</td>
+				</tr>
+				<tr>
+					<td>いいい</td>
+					<td>2011.07.31</td>
+					<td>福島N助</td>
+					<td>ほげほげツイートほげほげツイート...</td>
+					<td>電話太郎</td>
+					<td>編集</td>
+				</tr>
+				<tr>
+					<td>あああ</td>
+					<td>2011.08.01</td>
+					<td>かもめ太郎</td>
+					<td>ほげほげツイートほげほげツイート...</td>
+					<td>雑誌三郎</td>
+					<td>編集</td>
+				</tr>
+				<tr>
+					<td>ううううう</td>
+					<td>2011.08.01</td>
+					<td>かもめ太郎</td>
+					<td>ほげほげツイートほげほげツイート...</td>
+					<td>雑誌三郎</td>
+					<td>編集</td>
+				</tr>
+			</table>
+
+
+<h2>編集テーブル</h2>
+<p>※ボタンエリア(class=actionArea)は別パーツです</p>
+<table class="edit-table">
+<tr>
+	<th>ラベル</th>
+	<td><input type="text" /></td>
+</tr>
+<tr>
+	<th>ラベル</th>
+	<td><input type="text" /></td>
+</tr>
+</table>
+<div class="actionArea">
+<p class="text-center">
+<a href="#" class="btn2">キャンセルボタン</a>
+<input type="submit" value="入力内容を確認する" class="btn" />
+</p>
+</div>
+
+</div>
+<!-- /container_12 --></div>
+
+
+
+<div class="container_12">
+  <div class="grid_3">
+		<h2>規約</h2>
+		<p>制作における規約を守ることで、メンテナンス・パフォーマンスともに高いコードを利用できます</p>
+		<p><span class="span_kiyaku1">R</span>レンダリングを加速</p>
+		<p><span class="span_kiyaku2">M</span>メンテナンスが容易</p>
+		<p><span class="span_kiyaku3">P</span>パフォーマンスの向上</p>
+
+  </div>
+  <div class="grid_9 mainBlock">
+		<h2>外部ファイル</h2>
+		<p class="text-indent"><span class="span_kiyaku1">R</span>CSSは上に、JSは下に<br /><span class="text-gray">DOM構築中の再レンダリングやDOM構築ブロックが起こらないため描画が早くなります</span></p>
+		<p class="text-indent"><span class="span_kiyaku2">M</span>jQueryだけ上に<br /><span class="text-gray">ページ中の$記述に対応</span></p>
+		<h2>CSS</h2>
+		<p class="text-indent"><span class="span_kiyaku3">P</span>min化して１ファイルに<br /><span class="text-gray">min化してもブラウザ間の差異は出ません</span></p>
+		<p class="text-indent"><span class="span_kiyaku1">R</span>@importを使わない<br /><span class="text-gray">CSSから外部CSSを読み込むとレンダリング停止＋通信が走るため描画が遅くなります</span></p>
+		<p class="text-indent"><span class="span_kiyaku2">M</span>個別ページ専用CSSは直接記述<br /><span class="text-gray">個別ページのみに１度だけ登場するスタイルは共通CSS化する必要はありません</span></p>
+		<p class="text-indent"><span class="span_kiyaku1">R</span>小さいアイコンはCSS Spriteで<br /><span class="text-gray">HTTPリクエスト回数を減らし、画像をキャッシュすれば描画が早くなります</span></p>
+		<p class="text-indent"><span class="span_kiyaku3">P</span>expressionは使わない<br /><span class="text-gray">IE専用に重い処理を走らせるのはやめましょう</span></p>
+
+		<h2>JS</h2>
+		<p class="text-indent"><span class="span_kiyaku1">R</span>ライブラリはmin化した内容をまとめて１ファイルに<br /><span class="text-gray">通信回数を減らして描画が早くなります</span></p>
+		<p class="text-indent"><span class="span_kiyaku2">M</span>サイト専用コードもmin化してコメント削除<br /><span class="text-gray">開発用リソースとリリース用リソースを分けることでメンテナンスが向上します</span></p>
+		<p class="text-indent"><span class="span_kiyaku2">M</span>JQueryのセレクタ専用にクラスを指定しない<br /><span class="text-gray">id属性またはdata-*属性を利用します。ただしレンダリングのためにaddClass/removeClassは問題ありません</span></p>
+		<p class="text-indent"><span class="span_kiyaku2">M</span>onclick,onload,onchange等イベントをインライン記述しない<br /><span class="text-gray">jQueryの各イベントをbindすれば、ロジックとデザインを分離できます</span></p>
+		<p class="text-indent"><span class="span_kiyaku3">P</span>defer、asyncが使えるコードは属性を指定する<br /><span class="text-gray">非同期リクエストすることで描画が早くなります</span></p>
+
+		<h2>画像</h2>
+		<p class="text-indent"><span class="span_kiyaku1">R</span>IMGタグは画像サイズを指定する<br /><span class="text-gray">サイズがわかっていれば、画像自体が読み込まれなくても画像のスペースを確保できるため描画が早くなります</span></p>
+  </div>
+
+<!-- /container_12 --></div>
+
+
+
+<div class="container_12">
+  <div class="grid_3">
+		<h2>フォルダ構成</h2>
+		<p>もうファイルの場所で迷わない</p>
+		<p>ライブラリとアプリケーション用独自コードは別フォルダで管理</p>
+
+  </div>
+  <div class="grid_9">
+<div class="indent-list">
+	<ul>
+		<li><strong>CSS/</strong><ul>
+			<li>lib/<span>外部ライブラリ</span><ul>
+				<li>(jquery-ui-xxx.css)</li>
+				<li>(images/)</li>
+			</ul></li>
+			<li>style.css<span>アプリケーション用CSS</span></li>
+		</ul></li>
+		<li><strong>img/</strong><ul>
+			<li>logo.png</li>
+			<li>icon/<span>アイコン用フォルダ</span></li>
+		</ul></li>
+		<li><strong>js/</strong><ul>
+			<li>plugins.js<span>外部プラグインを１ファイルにまとめる</span></li>
+			<li>script.js<span>全ページで共通実行するコード</span></li>
+			<li>mylib/<span>アプリケーション専用コード・カスタムライブラリ</span></li>
+			<li>lib/<span>外部ライブラリ</span></li>
+		</ul></li>
+		<li><strong>sass/</strong><ul>
+			<li>style.scss<span>style.css書き出し用メインファイル</span></li>
+			<li>ie.scss<span>IE用CSS（必要に応じて利用）</span></li>
+			<li>lib/<span>外部ライブラリ</span></li>
+			<li>themes/<span>アプリケーションテーマおよびモジュールを選択</span></li>
+		</ul></li>
+		<li>robots.txt<span>クローラ用の指定</span></li>
+		<li>humans.txt<span>人間用の指定（必要に応じて）</span></li>
+		<li>xxx.html</li>
+	</ul>
+</div>
+  </div>
+
+<!-- /container_12 --></div>
+
+
+
+<div class="container_12">
+  <div class="grid_6">
+		<h2>Libraries</h2>
+		<p>フロントフレームワークは、右記のライブラリを利用しています</p>
+
+  </div>
+  <div class="grid_6">
+
+<p class="text-gray">HTML5-boilerplate</p>
+<p class="text-gray">modernizr</p>
+<p class="text-gray">YUI2</p>
+<p class="text-gray">normalize</p>
+<p class="text-gray">960 Grid System</p>
+<p class="text-gray">jQuery 1.6.1</p>
+  </div>
+
+<!-- /container_12 --></div>
+
+
+<div class="container_12">
+<div class="grid_3">
+<h1 id="scss" class="midasi">SCSS support</h1>
+<p>RubyGem scssを利用</p>
+</p>
+<!-- /grid --></div>
+<div class="grid_9 mainBlock">
+<h2>css作成コマンド</h2>
+<p>sassフォルダで「sass」コマンドを実行</p>
+<pre>
+sass --style compressed style.scss:../css/style.css
+</pre>
+
+<h2>モジュール構成</h2>
+<p>上記、タイポグラフィ/ツールチップ/ボタン/メッセージバー/フォーム/ページネイション/タブ/モーダル/テーブルは、別のscssファイルになっています。</p>
+<p>必要なモジュールのみインポートし、利用するアプリケーションごとに適宜書き換えてください。</p>
+
+<h2>インストール</h2>
+<p>Windows環境のインストール</p>
+<p>1.Ruby</p>
+<p>http://rubyforge.org/frs/?group_id=167&release_id=45627<br />、http://rubyforge.org/frs/download.php/74298/rubyinstaller-1.9.2-p180.exeなどをダウンロード（最新版を利用）</p>
+<p>2.gem</p>
+<p>http://rubyforge.org/frs/?group_id=126<br />、
+http://rubyforge.org/frs/download.php/74952/rubygems-update-1.8.5.gemなどをダウンロード（最新版を利用）<br />
+コマンド：gem install sass</p>
+
+<p>mac環境のインストール</p>
+<pre>sudo gem install haml</pre>
+<pre>sudo gem install sass</pre>
+
+</div>
+<!-- /container_12 --></div>
+
+
+<!-- /contents --></div>
+
+
+<div id="footer" data-role="footer" role="contentinfo">
+<div class="layout-inner">
+<ul>
+<li><a href="#">プライバシーポリシー</a></li>
+<li><a href="#">利用規約</a></li>
+<li><a href="#">お問い合わせ</a></li>
+</ul>
+<address>copyright&copy;RECRUIT MEDIA COMMUNICATIONS.</address>
+</div>
+<!-- /footer --></div>
+
+<!-- /container --></div>
+
+
+
+
+<div class="topbar" style="display:none;">
+<div class="fill">
+<div class="container">
+<h3><a href="#container">フレームワーク</a></h3>
+
+<ul>
+	<li class="active"><a href="#grid">グリッド</a></li>
+	<li><a href="#color">カラー設定</a></li>
+	<li><a href="#typography">タイポグラフィ</a></li>
+	<li><a href="#button">ボタン</a></li>
+	<li><a href="#messagebar">メッセージバー</a></li>
+	<li><a href="#form">フォーム</a></li>
+	<li><a href="#pagination">ページネイション</a></li>
+	<li><a href="#tab">タブ</a></li>
+	<li><a href="#table">テーブル</a></li>
+	<li><span class="close" data-role="topbar-close-btn">[×閉じる]</span></li>
+</ul>
+</div>
+</div>
+<!-- /topbar --></div>
+
+
+
+<!-- end of HTML-LAYOUT -->
+
+
+<script src="js/lib/jquery-ui-1.8.16.custom.min.js"></script>
+
+
+<script src="js/plugins.js"></script>
+<script src="js/script.js"></script>
+
+<script src="sample/files/scrollfix.js"></script>
+<script src="sample/files/jquery.scrollTo-min.js"></script>
+<script src="sample/files/jquery.easing.1.3.js"></script>
+<script>
+//スムース
+$(function() {
+	$("a").click(function(){
+		_href = $(this).attr('href');
+		if(_href.length >1){
+			$.scrollTo(_href, 200, {easing:'easeOutExpo'});
+		}
+	});
+});
+</script>
+
+
+  <!--[if lt IE 7 ]>
+    <script src="js/lib/dd_belatedpng.js"></script>
+    <script>DD_belatedPNG.fix("img, .png_bg"); // Fix any <img> or .png_bg bg-images. Also, please read goo.gl/mZiyb </script>
+  <![endif]-->
+
+</body>
+</html>

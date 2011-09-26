@@ -1,0 +1,178 @@
+@charset "UTF-8";
+/* -----------------------------
+  PAGE LAYOUT
+  author:
+  update:
+------------------------------*/
+
+html{
+	background-color: darken($color_main,50%);
+//フッターの色と合わせればコンテンツが短いときも色落ちしない
+}
+
+/* LAYOUT container
+--------------------------------------------------------*/
+
+#container {
+	background: #fff;
+//	@include linear-gradient(#fff,#efefef);
+	width: 100%;
+	border-top: 3px solid $color_main;
+}
+
+
+/* LAYOUT header
+--------------------------------------------------------*/
+
+#header{
+	color:#fff;
+	@include linear-gradient(#333,#474747);
+
+	.layout-inner{
+		@include grid_container;//960px container
+		@include clearfix;
+		margin: 0 auto;
+		padding: 8px 0 20px 0;
+	}
+
+	#logo{
+		float: left;
+		span{
+			display: block;
+			font-size:  $yui-10px;
+		}
+		a{
+			text-decoration: none;
+			color: #fff;
+		}
+	}
+
+	#manage{
+		float: right;
+
+		li{
+			display: inline;
+			margin-left: 1em;
+		}
+
+		a{
+			color:#fff;
+			text-decoration:none;
+			border-bottom:1px dashed #ccc;
+			&:hover{
+				border-bottom:1px solid #ccc;
+				background:#333;
+			}
+		}
+	}
+}//header
+
+
+
+/* LAYOUT contents
+--------------------------------------------------------*/
+#contents{
+	background:#fff;
+	@include clearfix;
+	@include grid_container;//960px container
+	margin-top: 1em;
+	margin-bottom: 1em;
+	min-height: 350px;
+}
+
+.logout fieldset{
+	padding: 0 20px;
+	border: none;
+
+	.field{
+		margin: 12px auto 25px;
+		width:400px;
+	}
+	input[type="text"],
+	input[type="password"]{
+		width:380px;
+	}
+}
+
+
+
+.side_grid{
+	@include grid(2);
+}
+
+.mainBlock{
+	@include grid(9);
+	.layout-inner{
+		margin-top: 1em;
+		margin-bottom: 1em;
+	}
+}
+.logout .mainBlock{
+	@include grid(8);
+}
+
+.subBlock{
+	@include grid(3);
+	.layout-inner{
+		margin-top: 1em;
+		margin-bottom: 1em;
+
+		.subCmnBlock{
+			h3{
+				background: #999;
+				padding: 0.4em;
+				color: #000;
+				border: 1px solid #ccc;
+				@include tabtop-border-radius(4px);
+				margin: 0;
+			}
+			.body{
+				border: 1px solid #ccc;
+				padding: 10px 5px;
+				@include tabbtm-border-radius(4px);
+			}
+		}
+
+	}
+}
+
+
+
+
+
+/* LAYOUT footer
+--------------------------------------------------------*/
+
+#footer{
+	border-top:1px solid $color_main;
+	@include clearfix;
+	@include linear-gradient(darken($color_main,20%),darken($color_main,50%));
+
+	.layout-inner{
+		@include grid_container;//960px container
+		margin: 0 auto;
+		padding: 2em 0;
+
+		li{
+			display: inline;
+			margin-right: 1em;
+		}
+
+	}
+
+	address{
+		font-size:  $yui-11px;
+		font-style: normal;
+	}
+
+	a{
+		@include suitable-text-color(darken($color_main,20%));
+		&:hover{
+			color: $color_main;
+		}
+	}
+
+}//footer
+
+
+

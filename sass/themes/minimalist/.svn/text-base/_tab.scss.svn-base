@@ -1,0 +1,47 @@
+@charset "UTF-8";
+/* -----------------------------
+  TAB
+  author:
+  update:
+------------------------------*/
+
+
+.tabs{
+	@include clearfix;
+	border-bottom: 1px solid $color_main;
+	list-style: none;
+	margin-bottom: 20px;
+
+	li{
+		float: left;
+		position: relative;
+		top: 1px;
+		line-height: 1.5em;
+
+		a{
+			display: block;
+			@include border-radius(4px 4px 0 0);
+			line-height: 2em;
+			margin: 0 2px 0 0;
+			padding: 0 15px;
+			text-decoration: none;
+			&:hover{
+				@include border-radius(4px 4px 0 0);
+				$color: lighten($color_main,20%);
+				background-color: $color;
+				@include suitable-text-color($color);
+			}
+		}
+	}
+	li.active a{
+		background-color: #fff;
+		border: 1px solid $color_border;
+		border-bottom: none;
+		color: #808080;
+		padding: 0 14px;
+	}
+}
+
+
+
+

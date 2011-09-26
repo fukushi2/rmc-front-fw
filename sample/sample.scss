@@ -1,0 +1,156 @@
+@charset "utf-8";
+
+/* import common utility
+  ユーザはこの内部ファイルは触らない
+--------------------------------------------------------*/
+@import "../sass/lib/normalize","../sass/lib/clearfix","../sass/lib/css3","../sass/lib/yui2";
+@import "../sass/lib/960gs";
+@import "../sass/lib/function";
+
+
+/* SETTING
+  サイトのテーマカラーを設定する
+--------------------------------------------------------*/
+$color_main   : #57d5ff; //メイン色（リンク）
+$color_effect : #59D500; //さし色
+$color_border : #ccc;    //ボーダー
+
+
+/* import common style and layout
+  サイトのテーマスタイル
+--------------------------------------------------------*/
+@import "../sass/themes/minimalist/cmn_styles";
+@import "../sass/themes/minimalist/typography";
+@import "../sass/themes/minimalist/buttons";
+@import "../sass/themes/minimalist/messagebar";
+@import "../sass/themes/minimalist/tooltip";
+@import "../sass/themes/minimalist/breadcrumb";
+@import "../sass/themes/minimalist/modal";
+@import "../sass/themes/minimalist/pagination";
+@import "../sass/themes/minimalist/tab";
+@import "../sass/themes/minimalist/tables";
+@import "../sass/themes/minimalist/forms";
+@import "../sass/themes/minimalist/topbar";
+@import "../sass/themes/minimalist/layout";
+
+
+/*
+  サンプルページ専用スタイル
+--------------------------------------------------------*/
+
+.grid_1,
+.grid_2,
+.grid_3,
+.grid_4,
+.grid_5,
+.grid_6,
+.grid_7,
+.grid_8,
+.grid_9,
+.grid_10,
+.grid_11,
+.grid_12 {
+	margin-bottom: 1em;
+}
+.container_sample{
+	background-image: url(files/12_col.gif);
+
+	p{
+		border: 1px solid #999;
+		padding: 10px 0;
+	}
+}
+
+.container_12{
+	@include grid_container;
+	@include clearfix;
+	margin-top: 3em;
+	margin-bottom: 2em;
+	border-bottom: 1px dashed #999;
+
+	.grid_1 {
+		@include grid(1);
+	}
+	.grid_2 {
+		@include grid(2);
+	}
+	.grid_3 {
+		@include grid(3);
+	}
+	.grid_4 {
+		@include grid(4);
+	}
+	.grid_5 {
+		@include grid(5);
+	}
+	.grid_6 {
+		@include grid(6);
+	}
+	.grid_7 {
+		@include grid(7);
+	}
+	.grid_8 {
+		@include grid(8);
+	}
+	.grid_9 {
+		@include grid(9);
+	}
+	.grid_10 {
+		@include grid(10);
+	}
+	.grid_11 {
+		@include grid(11);
+	}
+	.grid_12 {
+		@include grid(12);
+	}
+}
+
+.color_main,
+.color_effect,
+.color_border,
+.color_main1,
+.color_main2{
+	width: 80px;height:80px;
+	margin-right: 1em;
+	display: inline-block;
+}
+
+.color_main{
+	background: $color_main;
+
+}
+.color_main1{
+	background:darken($color_main,20%);
+}
+.color_main2{
+	background:lighten($color_main,20%);
+}
+.color_effect{
+	background: $color_effect;
+}
+.color_border{
+	background: $color_border;
+}
+
+pre{
+	background: #f1f1f1;
+	@include border-radius(2px);
+	padding: 0.5em 1em;
+}
+
+/*
+  サンプルページトップ見出し
+--------------------------------------------------------*/
+
+#sample-fwtitle{
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	@include linear-gradient(#06f,darken(#06f,20%));
+	text-align:center;
+	font-size: 32px;
+	padding:40px;
+	color:#fff;
+}
+p.font-small{
+	font-size: 11px;
+}
